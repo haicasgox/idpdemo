@@ -23,6 +23,6 @@ jobs:
           role-session-name: s3fullaccess
           aws-region: ${{ env.AWS_REGION }}
       # Upload a file to AWS s3
-      - name:  Copy index.html to s3
+      - name:  Copy picture to s3 bucket
         run: |
           aws s3 cp ./aws.png s3://${{ env.BUCKET_NAME }}/
