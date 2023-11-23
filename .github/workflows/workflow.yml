@@ -22,6 +22,12 @@ jobs:
           role-to-assume: arn:aws:iam::944226191156:role/GitHub_S3_FullAccess
           role-session-name: s3fullaccess
           aws-region: ${{ env.AWS_REGION }}
+          
+      # Check AWS Identity
+      - name: Sts GetCallerIdentity
+        run: | 
+          aws sts get-caller-identity
+          
       # Upload a file to AWS s3
       - name:  Copy picture to s3 bucket
         run: |
